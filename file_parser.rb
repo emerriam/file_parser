@@ -36,7 +36,7 @@ class FileParser < ActiveRecord::Migration[5.1]
 
   def parse_row(row)
     char_index = 0
-
+    item_array = []
     specs.each_with_index do |spec, index|
       item = convert_item(spec, row[0][char_index, specs[index][1].to_i])
       item_array << item
